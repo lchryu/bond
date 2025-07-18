@@ -1,0 +1,16 @@
+import time
+i = 1
+while True :
+    print(f'{i} EROR : 404 NOT FOUND')
+    i += 1
+    if i == 10000 :
+        
+        print('WILL DESTROY THIS COMPUTER IN 3 SECONDS' )
+        for i in range(3, -1, -1):
+            time.sleep(1)
+            print(i)
+        
+        time.sleep(1)            
+        while True :
+            print('hacked')   
+        break
