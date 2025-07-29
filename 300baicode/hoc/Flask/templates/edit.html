@@ -1,0 +1,100 @@
+{% extends "base.html" %} {% block title %}Chỉnh sửa {{ product.name }} - Flask
+CRUD{% endblock %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card">
+      <div class="card-header bg-warning text-dark">
+        <h4 class="mb-0">
+          <i class="fas fa-edit me-2"></i>
+          Chỉnh sửa sản phẩm
+        </h4>
+      </div>
+      <div class="card-body">
+        <form method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">
+              <i class="fas fa-tag me-1"></i>
+              Tên sản phẩm <span class="text-danger">*</span>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              required
+              value="{{ product.name }}"
+              placeholder="Nhập tên sản phẩm"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">
+              <i class="fas fa-dollar-sign me-1"></i>
+              Giá (VNĐ) <span class="text-danger">*</span>
+            </label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              name="price"
+              required
+              step="0.01"
+              min="0"
+              value="{{ product.price }}"
+              placeholder="0"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="description" class="form-label">
+              <i class="fas fa-align-left me-1"></i>
+              Mô tả
+            </label>
+            <textarea
+              class="form-control"
+              id="description"
+              name="description"
+              rows="4"
+              placeholder="Nhập mô tả sản phẩm (không bắt buộc)"
+            >
+{{ product.description or '' }}</textarea
+            >
+          </div>
+
+          <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>Thông tin:</strong> Bạn đang chỉnh sửa sản phẩm #{{
+            product.id }}
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a
+              href="{{ url_for('view_product', id=product.id) }}"
+              class="btn btn-secondary me-md-2"
+            >
+              <i class="fas fa-arrow-left me-1"></i>
+              Hủy bỏ
+            </a>
+            <button type="submit" class="btn btn-warning">
+              <i class="fas fa-save me-1"></i>
+              Cập nhật
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Format số tiền khi nhập
+  document.getElementById("price").addEventListener("input", function (e) {
+    let value = e.target.value;
+    if (value) {
+      // Chỉ cho phép số và dấu chấm
+      value = value.replace(/[^0-9.]/g, "");
+      e.target.value = value;
+    }
+  });
+</script>
+{% endblock %}

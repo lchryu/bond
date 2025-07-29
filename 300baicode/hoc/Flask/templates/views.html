@@ -1,0 +1,97 @@
+{% extends "base.html" %} {% block title %}{{ product.name }} - Flask CRUD{%
+endblock %} {% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        <h4 class="mb-0">
+          <i class="fas fa-eye me-2"></i>
+          Chi tiết sản phẩm
+        </h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3 text-muted">
+            <i class="fas fa-hashtag me-1"></i>
+            <strong>ID:</strong>
+          </div>
+          <div class="col-md-9">#{{ product.id }}</div>
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-3 text-muted">
+            <i class="fas fa-tag me-1"></i>
+            <strong>Tên sản phẩm:</strong>
+          </div>
+          <div class="col-md-9">
+            <h5 class="text-primary mb-0">{{ product.name }}</h5>
+          </div>
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-3 text-muted">
+            <i class="fas fa-dollar-sign me-1"></i>
+            <strong>Giá:</strong>
+          </div>
+          <div class="col-md-9">
+            <h4 class="text-success mb-0">
+              {{ "{:,.0f}".format(product.price) }} VNĐ
+            </h4>
+          </div>
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-3 text-muted">
+            <i class="fas fa-align-left me-1"></i>
+            <strong>Mô tả:</strong>
+          </div>
+          <div class="col-md-9">
+            {% if product.description %}
+            <p class="mb-0">{{ product.description }}</p>
+            {% else %}
+            <em class="text-muted">Chưa có mô tả</em>
+            {% endif %}
+          </div>
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-3 text-muted">
+            <i class="fas fa-calendar-alt me-1"></i>
+            <strong>Ngày tạo:</strong>
+          </div>
+          <div class="col-md-9">{{ product.created_at }}</div>
+        </div>
+      </div>
+      <div class="card-footer bg-transparent">
+        <div class="d-flex justify-content-between">
+          <a href="{{ url_for('index') }}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left me-1"></i>
+            Quay lại danh sách
+          </a>
+          <div>
+            <a
+              href="{{ url_for('edit_product', id=product.id) }}"
+              class="btn btn-warning me-2"
+            >
+              <i class="fas fa-edit me-1"></i>
+              Chỉnh sửa
+            </a>
+            <a
+              href="{{ url_for('delete_product', id=product.id) }}"
+              class="btn btn-danger"
+              onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')"
+            >
+              <i class="fas fa-trash me-1"></i>
+              Xóa
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
