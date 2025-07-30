@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dung bam vao day luc 00:00</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="custom-alert" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.95);z-index:10000;justify-content:center;align-items:center;flex-direction:column;">
+        <div style="background:#1a0000;border:4px solid #ff0000;padding:40px 30px 30px 30px;border-radius:20px;box-shadow:0 0 40px 10px #ff0000;max-width:90vw;max-height:80vh;display:flex;flex-direction:column;align-items:center;">
+            <h2 style="font-family:'Creepster',cursive;color:#ff0000;font-size:2.5em;text-shadow:0 0 10px #000,0 0 8px #ff0000;margin-bottom:10px;">CẢNH BÁO!</h2>
+            <p style="color:#fff;font-size:1.3em;text-align:center;margin-bottom:20px;text-shadow:0 0 8px #000;">App đang sửa vì tối qua có một <span style='color:#ff0000;font-weight:bold;'>con ma đột nhập</span>!<br>Hãy cẩn thận khi truy cập lúc <span style='color:#ff0000;'>00:00</span>...</p>
+            <button onclick="closeCustomAlert()" style="margin-top:10px;padding:10px 30px;font-size:1.1em;background:#ff0000;color:#fff;border:none;border-radius:10px;cursor:pointer;box-shadow:0 0 10px #ff0000;transition:background 0.2s;">Đã hiểu</button>
+        </div>
+    </div>
+    <div id="jumpscare" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:black;z-index:9999;justify-content:center;align-items:center;flex-direction:column;">
+        <img src="https://i.imgur.com/8Q2QyQp.png" alt="Jumpscare" style="max-width:80vw;max-height:80vh;box-shadow:0 0 50px 20px red;">
+        <audio id="scream-audio" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b5b6b6b2.mp3"></audio>
+    </div>
+    <h1 class="scary-title">DUNG BAM VAO DAY LUC 00:00</h1>
+    <h2 class="scary-sub">Đừng bấm vào đây lúc 00:00 nếu bạn không muốn gặp ma</h2>
+    <p class="scary-text">Chào mừng bạn đến với trang web của chúng tôi!</p>
+    <p class="scary-text">Hãy nhớ rằng bạn <span class="red">KHÔNG ĐƯỢC PHÉP</span> nhấn vào đây vào lúc <span class="red">00:00</span>.</p>
+    <p class="scary-text">Chúng tôi hy vọng bạn sẽ có một trải nghiệm <span class="red">đáng sợ</span>!</p>
+    <button onclick="showJumpscare()">DUNG BAM VAO DAY LUC 00:00</button>
+    <br> <br>
+    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJW-UIAifjg5P_R1M8gcaw0V6GxDF3na9xg&s" target="_blank" class="btn">ấn vào đây để đi tới một game vô tri</a>
+</body>
+<script>
+    function showJumpscare() {
+        document.getElementById('custom-alert').style.display = 'flex';
+    }
+    function closeCustomAlert() {
+        document.getElementById('custom-alert').style.display = 'none';
+    }
+</script>
+</html> 
