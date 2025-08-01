@@ -1,4 +1,4 @@
-def sum_digit(n):
+def sum_digit (n):
     total = 0
     while n > 0:
         total += n % 10

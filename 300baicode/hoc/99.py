@@ -13,4 +13,4 @@ def avg (k) :
     return avg 
 
 k = int(input())
-print(f'{avg (k) :. 1f}')    
+print(f'{avg(k):.1f}')    
