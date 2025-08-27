@@ -5,7 +5,7 @@ from random import *
 from os import *
 
 # variable
-help_list = {'time':'timer'}
+help_list = "timer : there will be a timer for you"
 
 # def
 def welcome () :
@@ -16,6 +16,18 @@ def welcome () :
 def help () :
     print(help_list)
 
+def timing () :
+    entering = input()
+    a = time.time
+    entering2  = input()    
+    b = time.time()
+    print( a - b )
 # cmd
-
+def cmd () :
+    cmd_in = input()
+    if cmd_in == "timer" :
+        timing()
 # main
+welcome()
+while True :
+    cmd ()

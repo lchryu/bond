@@ -7,12 +7,16 @@ def isprime(n: int) :
             return False
     return True
 
+def ischen (n : int) :
+    if isprime (n) and isprime (n + 2) :
+        return True
+    return False
 a = int(input())
 i = 0
 sum = 0
 _ = 0 
 while True :
-    if isprime (i) and isprime (i + 2) :
+    if ischen (i) :
         sum += i
         _ += 1
     i += 1
