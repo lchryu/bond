@@ -8,9 +8,10 @@ def isprime(n: int) :
     return True
 
 def ischen (n : int) :
-    if isprime (n) and isprime (n + 2) :
-        return True
-    return False
+    # if isprime (n) and isprime (n + 2) :
+    #     return True
+    # return False
+    return isprime(n) and isprime(n + 2)
 a = int(input())
 i = 0
 sum = 0
