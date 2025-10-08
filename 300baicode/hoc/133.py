@@ -6,7 +6,7 @@ check = False
 for i in range (a) :
     if b[i] == x :
         print("Yes")
-        print(i + 1)
+        print(i)
         check = True
         break
 if check == False :

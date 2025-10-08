@@ -11,6 +11,6 @@ b = [int(input()) for i in range (a)]
 for index in range (a) :
     if is_prime(b[index]):
         check = True
-        print(index , end = " ")
+        print(b[index] , end = " ")
 if check == False :
     print("-")
