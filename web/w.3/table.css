@@ -1,0 +1,8 @@
+table#killer th , 
+table#killer td
+{
+    border: 2px solid red;
+}
+table#killer{
+    border-collapse: collapse;
+}
