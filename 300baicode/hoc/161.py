@@ -1,2 +1,4 @@
-list_input = list(map(int, input().split()))
-# new
+string_input = list(input())
+a = int(input())
+
+print(string_input[a])
