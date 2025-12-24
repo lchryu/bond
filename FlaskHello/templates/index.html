@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <h2>Nhập tên của con:</h2>
+      <form method="POST">
+        <input
+          type="text"
+          name="name"
+          placeholder="Ví dụ: An, Bình, Chi..."
+          required
+        />
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </body>
+</html>
