@@ -1,7 +1,14 @@
-n = int(input())
-k = int(input())
-cnt = 0
-for i in range(0,n, k):
-    if i == 0: cnt += n
-    else: cnt += (n - i)
+from collections import Counter
+
+
+s = "aabbacbbb"
+
+cnt = Counter(s)
 print(cnt)
+print(sorted(cnt))
+
+
+T = ""
+for i in sorted(cnt):
+    T += i
+print(T * 2)
