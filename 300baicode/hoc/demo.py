@@ -1,14 +1,7 @@
-from collections import Counter
-
-
-s = "aabbacbbb"
-
-cnt = Counter(s)
-print(cnt)
-print(sorted(cnt))
-
-
-T = ""
-for i in sorted(cnt):
-    T += i
-print(T * 2)
+a = int(input())
+b = int(input())
+c = int(input())
+z = [a, b, c]
+z.sort()
+print(z[2] + z[1] + 1)
+# print(a + b + c - min(a, b, c) + 1)

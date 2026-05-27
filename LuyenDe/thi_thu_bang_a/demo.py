@@ -1,3 +1,4 @@
-import math
-N = 12
-print(N // math.lcm(2, 5))
+a = [1]
+b = [2, 3]
+
+print(a + b)
